@@ -40,10 +40,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
 SELECT contact_name, country
 FROM customers
 WHERE country = 'UK'
-LIMIT 6
 ```
 
-* [ ] ***find all customers with postal code 1010. Returns 3 customers***
+* [*] ***find all customers with postal code 1010. Returns 3 customers***
 
   <details><summary>hint</summary>
 
@@ -51,7 +50,9 @@ LIMIT 6
   </details>
 
 ```SQL
-
+SELECT contact_name, country, postal_code
+FROM customers
+WHERE postal_code = '1010'
 ```
 
 * [ ] ***find the phone number for the supplier with the id 11. Should be (010) 9984510***
