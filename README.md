@@ -141,7 +141,7 @@ SET postal_code = '11122'
 WHERE customer_id = 'SHIRE'
 ```
 
-* [ ] ***list orders grouped and ordered by customer company name showing the number of orders per customer company name. _Rattlesnake Canyon Grocery_ should have 18 orders***
+* [x] ***list orders grouped and ordered by customer company name showing the number of orders per customer company name. _Rattlesnake Canyon Grocery_ should have 18 orders***
 
   <details><summary>hint</summary>
 
@@ -150,10 +150,14 @@ WHERE customer_id = 'SHIRE'
   </details>
 
 ```SQL
-
+SELECT company_name, count(*) order_id
+FROM orders o JOIN customers c  
+on o.Customer_ID = c.Customer_ID  
+GROUP BY company_name
+HAVING company_name = 'Rattlesnake Canyon Grocery'
 ```
 
-* [ ] ***list customers by contact name and the number of orders per contact name. Sort the list by the number of orders in descending order. _Jose Pavarotti_ should be at the top with 31 orders followed by _Roland Mendal_ with 30 orders. Last should be _Francisco Chang_ with 1 order***
+* [x] ***list customers by contact name and the number of orders per contact name. Sort the list by the number of orders in descending order. _Jose Pavarotti_ should be at the top with 31 orders followed by _Roland Mendal_ with 30 orders. Last should be _Francisco Chang_ with 1 order***
 
   <details><summary>hint</summary>
 
@@ -161,7 +165,11 @@ WHERE customer_id = 'SHIRE'
   </details>
 
 ```SQL
-
+SELECT contact_name, count(*) order_id
+FROM orders o JOIN customers c  
+on o.Customer_ID = c.Customer_ID  
+GROUP BY contact_name
+ORDER BY order_id DESC
 ```
 
 * [ ] ***list orders grouped by customer's city showing the number of orders per city. Returns 69 Records with _Aachen_ showing 6 orders and _Albuquerque_ showing 18 orders***
@@ -172,7 +180,11 @@ WHERE customer_id = 'SHIRE'
   </details>
 
 ```SQL
-
+SELECT city, count(*) order_id
+FROM orders o JOIN customers c  
+on o.ship_city = c.city  
+GROUP BY city
+ORDER BY city ASC
 ```
 
 ## Data Normalization
