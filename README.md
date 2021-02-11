@@ -14,7 +14,7 @@ Working with SQL
 
 Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same data we used during the guided project. You can find a copy of the SQL script under the `assets` folder in this repository.
 
-* [*] ***pgAdmin data refresh***
+* [x] ***pgAdmin data refresh***
 
 * Select the northwind database created during the guided project.
 
@@ -29,7 +29,7 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
 
 ### Answer the following data queries. Keep track of the SQL you write by pasting it into this document under its appropriate header below in the provided SQL code block. You will be submitting that through the regular fork, change, pull process
 
-* [*] ***find all customers that live in London. Returns 6 records***
+* [x] ***find all customers that live in London. Returns 6 records***
 
   <details><summary>hint</summary>
 
@@ -42,7 +42,7 @@ FROM customers
 WHERE country = 'UK'
 ```
 
-* [*] ***find all customers with postal code 1010. Returns 3 customers***
+* [x] ***find all customers with postal code 1010. Returns 3 customers***
 
   <details><summary>hint</summary>
 
@@ -95,7 +95,7 @@ FROM suppliers
 WHERE length(company_name) > 20
 ```
 
-* [ ] ***find all customers that include the word 'MARKET' in the contact title. Should return 19 records***
+* [*] ***find all customers that include the word 'MARKET' in the contact title. Should return 19 records***
 
   <details><summary>hint</summary>
 
@@ -110,7 +110,7 @@ FROM customers
 WHERE upper(contact_title) LIKE '%MARKET%'
 ```
 
-* [ ] ***add a customer record for***
+* [x] ***add a customer record for***
 * customer id is 'SHIRE'
 * company name is 'The Shire'
 * contact name is 'Bilbo Baggins'
