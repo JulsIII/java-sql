@@ -81,7 +81,7 @@ FROM orders
 order by order_date DESC
 ```
 
-* [ ] ***find all suppliers who have names longer than 20 characters. Returns 11 records***
+* [*] ***find all suppliers who have names longer than 20 characters. Returns 11 records***
 
   <details><summary>hint</summary>
 
@@ -90,7 +90,9 @@ order by order_date DESC
   </details>
 
 ```SQL
-
+SELECT company_name
+FROM suppliers
+WHERE length(company_name) > 20
 ```
 
 * [ ] ***find all customers that include the word 'MARKET' in the contact title. Should return 19 records***
@@ -103,7 +105,9 @@ order by order_date DESC
   </details>
 
 ```SQL
-
+SELECT contact_title, contact_name
+FROM customers
+WHERE upper(contact_title) LIKE '%MARKET%'
 ```
 
 * [ ] ***add a customer record for***
